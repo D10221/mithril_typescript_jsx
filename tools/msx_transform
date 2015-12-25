@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+var fs = require('fs');
+var msx = require('msx');
+var path = require('path');
+var appRoot = require('app-root-path');
+
+var transform = (inputPath)=>{
+    var input  = path.parse(inputPath);
+    var output = path.join(input.dir, input.name + '.js');
+    fs.writeFileSync(output,msx.transform(fs.readFileSync(inputPath,'utf8'), { }));
+};
+
+var walk = (dir, action) => {
+    fs.readdirSync(dir).forEach( file => {
+        const p = path.join(dir,file);
+        if (fs.statSync(p).isDirectory()){
+             walk(p,action);
+        }
+        else if (/\.jsx$/.test(p)) {
+            action(p);
+        }
+    });
+};
+var src = path.join(appRoot.path,'src');
+walk(src, transform);

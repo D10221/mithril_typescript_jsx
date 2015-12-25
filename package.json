@@ -1,0 +1,25 @@
+{
+  "name": "mithril-electron-typescript-jsx",
+  "version": "0.0.0",
+  "description": "trying to be type safe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron . -d",
+    "build": "node tools/msx_transform && tsc"
+  },
+  "author": "james.a.forbes@gmail.com <=> (http://james-forbes.com)",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^1.0.0",
+    "bootstrap": "^3.3.5",
+    "commander": "^2.8.1",
+    "mithril": "^0.2.2-rc.1",
+    "msx": "^0.4.1",
+    "watch": "^0.16.0"
+  },
+  "devDependencies": {
+    "app-root-path": "^1.0.0",
+    "electron-prebuilt": "^0.36.1"
+  }
+}
