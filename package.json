@@ -8,7 +8,7 @@
     "start": "electron . -d",
     "build": "node tools/msx_transform && tsc"
   },
-  "author": "james.a.forbes@gmail.com <=> (http://james-forbes.com)",
+  "author": "ME",
   "license": "ISC",
   "dependencies": {
     "app-root-path": "^1.0.0",
